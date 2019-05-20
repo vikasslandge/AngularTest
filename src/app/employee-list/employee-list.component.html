@@ -1,0 +1,43 @@
+<br><br> 
+<p class="btn-info" align="center">
+  employee-list works!
+</p>
+
+<div>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employeeList">
+          <td>{{e.EmployeeId}}</td>
+          <td>{{e.EmployeeName}}</td>
+          <td><input type="button" value="delete" (click)="DeleteEmployee(e.EmployeeId)" class="btn btn-danger"> </td>
+          <td><input type="button" value="details" (click)="DetailsOfEmployee(e.EmployeeId)" class="btn btn-primary"> </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Date Of Birth</th>
+        <th>City </th>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{emp.EmployeeId}}</td>
+            <td>{{emp.EmployeeName}}</td>
+            <td>{{emp.Salary}}</td>
+            <td>{{emp.DateOfBirth}}</td>
+            <td>{{emp.City}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>

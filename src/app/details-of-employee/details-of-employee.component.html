@@ -1,0 +1,32 @@
+<br><br>
+<p class="btn-info" align="center">
+  details-of-employee works!
+</p>
+<div>
+    <form [formGroup]="searchForm" (submit)="OnSubmit()" class="container"  >
+        <label>Employee Id</label>
+        <input type="text" formControlName="EmployeeId" class="form-control">
+        <br>
+        <input type="submit" value="Search" class="btn btn-success ">
+    </form>
+</div>
+<div>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Date Of Birth</th>
+        <th>City </th>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{emp.EmployeeId}}</td>
+            <td>{{emp.EmployeeName}}</td>
+            <td>{{emp.Salary}}</td>
+            <td>{{emp.DateOfBirth}}</td>
+            <td>{{emp.City}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>

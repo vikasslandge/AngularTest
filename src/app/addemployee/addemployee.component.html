@@ -1,0 +1,39 @@
+<br><br> 
+<p class="btn-info" align="center">
+  addemployee works!
+</p>
+<Div >
+  <form [formGroup]="employeeForm" (submit)="OnSubmit()" class="container"  >
+    <label>Name</label>
+    <input type="text" formControlName="EmployeeName" class="form-control">
+    <div *ngIf="employeeForm.controls['EmployeeName'].hasError('required')
+    &&employeeForm.controls['EmployeeName'].touched " class="alert alert-danger" >
+      name is complsury
+    </div>
+    <label>Salary</label>
+    <input type="number" formControlName="Salary" class="form-control">
+    <div *ngIf="employeeForm.controls['Salary'].hasError('required')
+    &&employeeForm.controls['Salary'].touched " class="alert alert-danger" >
+      Salary is complsury
+      <div *ngIf="employeeForm.controls['Salary'].hasError('min')">minimum salary is 10000</div>
+    </div>
+    <label>Date Of Birth</label>
+    <input type="date" formControlName="DateOfBirth" max="2001-05-15" class="form-control">
+    <div *ngIf="employeeForm.controls['DateOfBirth'].hasError('required')
+    &&employeeForm.controls['DateOfBirth'].touched " class="alert alert-danger" >
+    DateOfBirth is complsury
+    </div>
+    <label>City</label>
+    <select   formControlName="City" class="form-control">
+    
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+    </select>
+    <div *ngIf="employeeForm.controls['City'].hasError('required')
+    &&employeeForm.controls['DateOfBirth'].City " class="alert alert-danger" >
+    City is complsury
+    </div>
+    <br>
+    <input type="submit" [disabled]="!employeeForm.valid" value="Add Employee" class="btn btn-success ">
+  </form>
+</Div>
